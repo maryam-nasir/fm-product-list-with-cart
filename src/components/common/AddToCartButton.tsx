@@ -20,7 +20,7 @@ const AddToCartButton = ({
           className="h-10 w-[160px] flex items-center justify-center bg-white text-sm text-rose-900 font-semibold rounded-full gap-2 border border-solid border-rose-400"
           onClick={onIncrement}
         >
-          <img src={addToCartIcon} />
+          <img src={addToCartIcon} alt="cart icon" />
           Add to Cart
         </button>
       ) : (
@@ -29,7 +29,7 @@ const AddToCartButton = ({
             onClick={onDecrement}
             className="w-4 h-4 rounded-full border border-solid border-white flex items-center justify-center"
           >
-            <img src={decrementIcon} />
+            <img src={decrementIcon} alt="minus icon" />
           </button>
 
           {quantity}
@@ -38,7 +38,7 @@ const AddToCartButton = ({
             onClick={onIncrement}
             className="w-4 h-4 rounded-full border border-solid border-white flex items-center justify-center"
           >
-            <img src={incrementIcon} />
+            <img src={incrementIcon} alt="plus icon" />
           </button>
         </div>
       )}
