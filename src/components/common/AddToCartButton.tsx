@@ -1,6 +1,6 @@
 import addToCartIcon from "../../assets/icons/icon-add-to-cart.svg";
-import incrementIcon from "../../assets/icons/icon-increment-quantity.svg";
-import decrementIcon from "../../assets/icons/icon-decrement-quantity.svg";
+import PlusIcon from "../icons/PlusIcon";
+import MinusIcon from "../icons/MinusIcon";
 
 type AddToCartButtonProps = {
   quantity: number;
@@ -17,7 +17,7 @@ const AddToCartButton = ({
     <div className="absolute flex w-full justify-center -bottom-5">
       {quantity === 0 ? (
         <button
-          className="h-10 w-[160px] flex items-center justify-center bg-white text-sm text-rose-900 font-semibold rounded-full gap-2 border border-solid border-rose-400"
+          className="h-10 w-[160px] flex items-center justify-center bg-white text-sm text-rose-900 hover:text-red font-semibold rounded-full gap-2 border border-solid border-rose-400 hover:border-red"
           onClick={onIncrement}
         >
           <img src={addToCartIcon} alt="cart icon" />
@@ -27,18 +27,18 @@ const AddToCartButton = ({
         <div className="h-10 w-[160px] flex items-center justify-between bg-red text-sm text-white font-semibold rounded-full px-3">
           <button
             onClick={onDecrement}
-            className="w-4 h-4 rounded-full border border-solid border-white flex items-center justify-center"
+            className="w-4 h-4 rounded-full border border-solid border-white flex items-center justify-center hover:text-red hover:bg-white"
           >
-            <img src={decrementIcon} alt="minus icon" />
+            <MinusIcon />
           </button>
 
           {quantity}
 
           <button
             onClick={onIncrement}
-            className="w-4 h-4 rounded-full border border-solid border-white flex items-center justify-center"
+            className="w-4 h-4 rounded-full border border-solid border-white flex items-center justify-center hover:text-red hover:bg-white"
           >
-            <img src={incrementIcon} alt="plus icon" />
+            <PlusIcon />
           </button>
         </div>
       )}
