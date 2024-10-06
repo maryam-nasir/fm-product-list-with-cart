@@ -23,18 +23,21 @@ const ProductItem = ({ product }: ProductItemProps) => {
           className={`sm:hidden w-full rounded-lg ${
             isAdded ? selectedStyles : ""
           }`}
+          alt={`${name} image`}
         />
         <img
           src={image.tablet}
           className={`hidden sm:block lg:hidden w-full rounded-lg ${
             isAdded ? selectedStyles : ""
           }`}
+          alt={`${name} image`}
         />
         <img
           src={image.desktop}
           className={`hidden lg:block w-full rounded-lg ${
             isAdded ? selectedStyles : ""
           }`}
+          alt={`${name} image`}
         />
 
         <AddToCartButton
