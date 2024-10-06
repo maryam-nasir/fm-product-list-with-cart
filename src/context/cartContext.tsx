@@ -9,12 +9,14 @@ type CartType = {
   products: CartProductType[];
   onIncrement: (id: string) => void;
   onDecrement: (id: string) => void;
+  onRemove: (id: string) => void;
 };
 
 const INITIAL_CART_CONTEXT: CartType = {
   products: [],
   onIncrement: (id: string) => {},
   onDecrement: (id: string) => {},
+  onRemove: (id: string) => {},
 };
 
 export const CartContext = createContext<CartType>(INITIAL_CART_CONTEXT);
@@ -52,10 +54,21 @@ const CartContextProvider = ({ children }: { children: React.ReactNode }) => {
     setCartProducts(updatedCartProducts);
   };
 
+  const handleRemove = (productId: string) => {
+    const updatedCartProducts: CartProductType[] = [...cartProducts];
+    const index: number = updatedCartProducts.findIndex(
+      (product) => product.id === productId
+    );
+
+    updatedCartProducts.splice(index, 1);
+    setCartProducts(updatedCartProducts);
+  };
+
   const cartContext: CartType = {
     products: cartProducts,
     onIncrement: handleIncrement,
     onDecrement: handleDecrement,
+    onRemove: handleRemove,
   };
 
   return (
