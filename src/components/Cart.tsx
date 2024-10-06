@@ -7,7 +7,11 @@ import carbonNeutralIcon from "../assets/icons/icon-carbon-neutral.svg";
 import { PRODUCTS, type ProductType } from "../data";
 import Button from "./common/Button";
 
-const Cart = () => {
+type CartProps = {
+  onOrderConfirm: () => void;
+};
+
+const Cart = ({ onOrderConfirm }: CartProps) => {
   const { products, onRemove } = useContext(CartContext);
   const totalItemsCount: number = products.reduce(
     (totalQuantity, cartProduct) => cartProduct.quantity + totalQuantity,
@@ -40,7 +44,11 @@ const Cart = () => {
       </h2>
       {totalItemsCount === 0 ? (
         <div className="w-full flex flex-col items-center mt-10 mb-6 gap-4">
-          <img src={emptyCartImage} className="w-24" />
+          <img
+            src={emptyCartImage}
+            className="w-24"
+            alt="Empty cart illustration"
+          />
           <p className="text-sm font-semibold text-rose-500">
             Your added items will appear here
           </p>
@@ -66,14 +74,18 @@ const Cart = () => {
           </div>
 
           <div className="w-full flex items-center justify-center bg-rose-50 py-3 rounded-md">
-            <img src={carbonNeutralIcon} />
+            <img src={carbonNeutralIcon} alt="carbon neutral icon" />
             <p className="text-sm ml-3 text-rose-900">
               This is a <span className="font-semibold">carbon-neutral</span>{" "}
               delivery
             </p>
           </div>
 
-          <Button label="Confirm Order" onClick={() => {}} className="mt-5" />
+          <Button
+            label="Confirm Order"
+            onClick={onOrderConfirm}
+            className="mt-5"
+          />
         </div>
       )}
     </div>
