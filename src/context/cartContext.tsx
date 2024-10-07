@@ -15,9 +15,9 @@ type CartType = {
 
 const INITIAL_CART_CONTEXT: CartType = {
   products: [],
-  onIncrement: (id: string) => {},
-  onDecrement: (id: string) => {},
-  onRemove: (id: string) => {},
+  onIncrement: () => {},
+  onDecrement: () => {},
+  onRemove: () => {},
   onReset: () => {},
 };
 
