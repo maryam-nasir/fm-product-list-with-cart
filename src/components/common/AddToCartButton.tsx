@@ -27,7 +27,7 @@ const AddToCartButton = ({
         <div className="h-10 w-[160px] flex items-center justify-between bg-red text-sm text-white font-semibold rounded-full px-3">
           <button
             onClick={onDecrement}
-            className="w-4 h-4 rounded-full border border-solid border-white flex items-center justify-center hover:text-red hover:bg-white focus:outline-0 focus:text-red focus:bg-white"
+            className="w-4 h-4 rounded-full border-[1.5px] border-solid border-white flex items-center justify-center hover:text-red hover:bg-white focus:outline-0 focus:text-red focus:bg-white"
           >
             <MinusIcon />
           </button>
@@ -36,7 +36,7 @@ const AddToCartButton = ({
 
           <button
             onClick={onIncrement}
-            className="w-4 h-4 rounded-full border border-solid border-white flex items-center justify-center hover:text-red hover:bg-white focus:outline-0 focus:text-red focus:bg-white"
+            className="w-4 h-4 rounded-full border-[1.5px] border-solid border-white flex items-center justify-center hover:text-red hover:bg-white focus:outline-0 focus:text-red focus:bg-white"
           >
             <PlusIcon />
           </button>

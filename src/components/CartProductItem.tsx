@@ -43,7 +43,7 @@ const CartProductItem = ({ product, onRemove }: CartProductItemProps) => {
       <div className="flex items-center">
         <button
           onClick={onRemove}
-          className="w-4 h-4 rounded-full border border-solid border-rose-400 hover:border-rose-900 focus:outline-0 focus:border-rose-900 flex items-center justify-center text-rose-400 hover:text-rose-900 focus:text-rose-900"
+          className="w-4 h-4 rounded-full border-[1.5px] border-solid border-rose-400 hover:border-rose-900 focus:outline-0 focus:border-rose-900 flex items-center justify-center text-rose-400 hover:text-rose-900 focus:text-rose-900"
         >
           <RemoveIcon />
         </button>
