@@ -15,7 +15,7 @@ const ProductItem = ({ product }: ProductItemProps) => {
   const selectedStyles: string = "border-2 border-solid border-red";
 
   return (
-    <div className="flex flex-col w-full min-[480px]:w-60 mb-6 mr-6">
+    <div className="flex flex-col w-full min-[480px]:w-64 mb-6 mr-6">
       {/* Product Image */}
       <div className="relative flex mb-8">
         <img
